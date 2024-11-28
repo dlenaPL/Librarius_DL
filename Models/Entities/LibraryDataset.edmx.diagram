@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f98bc53018984440a2d982a1c980725d" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryModel.Authors" Width="1.5" PointX="3.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.BookCopies" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Books" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Conditions" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Fines" Width="1.5" PointX="13.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.FineStatuses" Width="1.5" PointX="11.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Genres" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Members" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Notifications" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Permissions" Width="1.5" PointX="4.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Publishers" Width="1.5" PointX="3.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Reservations" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Roles" Width="1.5" PointX="6.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Settings" Width="1.5" PointX="11.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Staff" Width="1.5" PointX="9" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Statuses" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.sysdiagrams" Width="1.5" PointX="1.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Transactions" Width="1.5" PointX="11.25" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="LibraryModel.FK__BookCopie__BookI__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_BookCopies_Conditions" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_BookCopies_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Books__Publisher__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Books__StatusID__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Notificat__BookI__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Reservati__BookI__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Transacti__BookI__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Fines__Transacti__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_Fines_FineStatuses" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Notificat__Borro__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Reservati__Borro__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Transacti__Borro__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Reservati__Statu__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Staff__RoleID__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_Settings_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_Transactions_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK__Transacti__Statu__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.BookAuthors" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.BookGenres" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.RolePermissions" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

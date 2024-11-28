@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:Librarius_DL.ViewModels"
+                    xmlns:view="clr-namespace:Librarius_DL.Views">
+
+    <DataTemplate DataType="{x:Type vm:HomeVM}">
+        <view:Home />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AuthorsVM}">
+        <view:Authors />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:GenresVM}">
+        <view:Genres />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:MembersVM}">
+        <view:Members />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:PublishersVM}">
+        <view:Publishers />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:RolesVM}">
+        <view:Roles />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettingsVM}">
+        <view:Settings />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:StatusesVM}">
+        <view:Statuses />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:FineStatusesVM}">
+        <view:FineStatuses />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:ConditionsVM}">
+        <view:Conditions />
+    </DataTemplate>
+
+</ResourceDictionary>
