@@ -27,6 +27,7 @@ namespace Librarius_DL.ViewModels
         public ICommand NavigateRolesCommand { get; set; }
         public ICommand NavigateFineStatusesCommand { get; set; }
         public ICommand NavigateConditionsCommand { get; set; }
+        public ICommand NavigateBooksCommand { get; set; }
 
         
 
@@ -39,6 +40,7 @@ namespace Librarius_DL.ViewModels
         private void Roles(object obj) => CurrentView = new RolesVM();
         private void FineStatuses(object obj) => CurrentView = new FineStatusesVM();
         private void Conditions(object obj) => CurrentView = new ConditionsVM();
+        private void Books(object obj) => CurrentView = new BooksVM();
 
 
         public NavigationVM() 
@@ -52,6 +54,7 @@ namespace Librarius_DL.ViewModels
             NavigateRolesCommand = new RelayCommand(Roles);
             NavigateFineStatusesCommand = new RelayCommand(FineStatuses);
             NavigateConditionsCommand = new RelayCommand(Conditions);
+            NavigateBooksCommand = new RelayCommand(Books);
 
             CurrentView = new HomeVM();
         }

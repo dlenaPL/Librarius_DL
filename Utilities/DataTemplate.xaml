@@ -42,5 +42,9 @@
     <DataTemplate DataType="{x:Type vm:ConditionsVM}">
         <view:Conditions />
     </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:BooksVM}">
+        <view:Books />
+    </DataTemplate>
 
 </ResourceDictionary>

@@ -69,10 +69,14 @@
     </ApplicationDefinition>
     <Compile Include="Utilities\AddNewItemVM.cs" />
     <Compile Include="Utilities\AllViewModel.cs" />
+    <Compile Include="Utilities\BooksForView.cs" />
     <Compile Include="Utilities\Btn.cs" />
+    <Compile Include="Utilities\BusinessLogic\DataBaseClass.cs" />
+    <Compile Include="Utilities\KeyAndValue.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
     <Compile Include="ViewModels\AddNewAuthorVM.cs" />
+    <Compile Include="ViewModels\AddNewBookVM.cs" />
     <Compile Include="ViewModels\AddNewConditionVM.cs" />
     <Compile Include="ViewModels\AddNewFineStatusVM.cs" />
     <Compile Include="ViewModels\AddNewGenreVM.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="ViewModels\AddNewRoleVM.cs" />
     <Compile Include="ViewModels\AddNewStatusVM.cs" />
     <Compile Include="ViewModels\AuthorsVM.cs" />
+    <Compile Include="ViewModels\BooksVM.cs" />
     <Compile Include="ViewModels\ConditionsVM.cs" />
     <Compile Include="ViewModels\FineStatusesVM.cs" />
     <Compile Include="ViewModels\GenresVM.cs" />
@@ -93,6 +98,9 @@
     <Compile Include="ViewModels\StatusesVM.cs" />
     <Compile Include="Views\AddNewAuthor.xaml.cs">
       <DependentUpon>AddNewAuthor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNewBook.xaml.cs">
+      <DependentUpon>AddNewBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddNewCondition.xaml.cs">
       <DependentUpon>AddNewCondition.xaml</DependentUpon>
@@ -119,6 +127,9 @@
     <Compile Include="Views\AllViewBase.cs" />
     <Compile Include="Views\Authors.xaml.cs">
       <DependentUpon>Authors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Books.xaml.cs">
+      <DependentUpon>Books.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Conditions.xaml.cs">
       <DependentUpon>Conditions.xaml</DependentUpon>
@@ -166,6 +177,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\ComboBox_v1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Image.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +206,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddNewAuthor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddNewBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,6 +242,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Authors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Books.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

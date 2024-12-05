@@ -25,8 +25,14 @@
 
                         
                         <Grid Grid.Row="1" HorizontalAlignment="left" Margin="20 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
                             
-                            <Button Width="120"
+                            <Button Grid.Column="0"
+                                    Width="120"
                                     Height="40"
                                     Background="#1dbf43"
                                     Padding="5"
@@ -41,6 +47,25 @@
                                 <TextBlock Text="Dodaj" Style="{StaticResource nav_font_style}" />
                                 
                             </Button>
+
+                            <Button Grid.Column="1"
+                                    Width="120"
+                                    Height="40"
+                                    Background="#75cdf0"
+                                    Padding="5"
+                                    Command="{Binding LoadCommand}">
+
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                    </Style>
+                                </Button.Resources>
+
+                                <TextBlock Text="Odswiez" Style="{StaticResource nav_font_style}" />
+
+                            </Button>
+
+
                         </Grid>
                   
                         <ContentPresenter Grid.Row="3"/>

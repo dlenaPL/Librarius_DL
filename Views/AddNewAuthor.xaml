@@ -40,6 +40,8 @@
             
         </Grid>
 
+        <!--<userControls:CustomTextBoxWithClearBtn Grid.Row="1" Placeholder="random text go" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>-->
+
         <Grid Grid.Row="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -95,6 +97,8 @@
                     FontSize="14"
                     Background="#b2d8d8"/>
         </Grid>
-        
+
+       
+
     </Grid>
 </local:AddNewItemViewBase>

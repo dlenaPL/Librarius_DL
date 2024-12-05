@@ -2,30 +2,28 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-    <Style x:Key="text_input_1"
-       TargetType="TextBox">
-
+    <Style x:Key="combo_box_1"
+           TargetType="ComboBox">
 
         <Setter Property="HorizontalContentAlignment"
-                Value="Left"/>
+        Value="Left"/>
 
         <Setter Property="VerticalContentAlignment"
-                Value="Center"/>
+        Value="Center"/>
 
         <Setter Property="Foreground"
-            Value="#292929"/>
+         Value="#292929"/>
 
         <Setter Property="FontSize"
-            Value="14"/>
+        Value="14"/>
 
         <Setter Property="Margin"
-            Value="5 5 20 5"/>
-        
+         Value="5 5 20 5"/>
+
         <Setter Property="Padding"
-                Value="5"/>
+        Value="10 5 5 5 "/>
 
 
     </Style>
-
-
+    
 </ResourceDictionary>

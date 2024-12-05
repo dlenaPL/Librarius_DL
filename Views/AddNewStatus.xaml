@@ -51,7 +51,7 @@
                      Grid.Column="1" 
                      Name="tbStatusDescription"
                      GotFocus="TextBox_GotFocus"
-                     Text="{Binding StatusName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding StatusDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      BorderBrush="#006666"
                      BorderThickness="1"
                      Style="{StaticResource text_input_1}"/>

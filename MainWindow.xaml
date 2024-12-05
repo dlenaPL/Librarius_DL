@@ -110,7 +110,7 @@
                           Command="{Binding NavigateFineStatusesCommand}"
                           IsChecked="False">
 
-                    <TextBlock Text="STAN POTRĄCEŃ => "
+                    <TextBlock Text="STANY POTRĄCEŃ => "
                                Style="{StaticResource nav_font_style}"/>
                 </Menu:Btn>
                 
@@ -119,11 +119,22 @@
                           Command="{Binding NavigateConditionsCommand}"
                           IsChecked="False">
 
-                    <TextBlock Text="STAN KSIĄŻEK => "
+                    <TextBlock Text="STANY KSIĄŻEK => "
                                Style="{StaticResource nav_font_style}"/>
                 </Menu:Btn>
 
-            </StackPanel>
+                <!--Books -->
+                <Menu:Btn Style="{StaticResource BtnStyle}"
+                            Command="{Binding NavigateBooksCommand}"
+                            IsChecked="False">    
+
+                    <TextBlock Text="KSIĄŻKI => "
+                                Style="{StaticResource nav_font_style}"/>
+                </Menu:Btn>
+                    
+                    
+
+                </StackPanel>
 
         </Grid>
         

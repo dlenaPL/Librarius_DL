@@ -26,8 +26,12 @@ namespace Librarius_DL.Views.CustomControls
     {
         public CustomTextBoxWithClearBtn()
         {
-            DataContext = this;
+            //DataContext = this;
             InitializeComponent();
+            txtInput.TextChanged += (s, e) =>
+            {
+                Text = txtInput.Text; // Update the dependency property
+            };
         }
 
         private string _placeholder;
@@ -63,5 +67,29 @@ namespace Librarius_DL.Views.CustomControls
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+    nameof(Text),
+    typeof(string),
+    typeof(CustomTextBoxWithClearBtn),
+    new FrameworkPropertyMetadata(string.Empty,
+        FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+        OnTextChanged));
+
+        public string Text
+        {
+            get => (string)GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
+        }
+
+        private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = d as CustomTextBoxWithClearBtn;
+            if (control != null && control.txtInput.Text != (string)e.NewValue)
+            {
+                control.txtInput.Text = (string)e.NewValue;
+            }
+        }
+
     }
 }

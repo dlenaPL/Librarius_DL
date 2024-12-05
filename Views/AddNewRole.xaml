@@ -50,7 +50,7 @@
                      Grid.Column="1" 
                      Name="tbRoleDescription"
                      GotFocus="TextBox_GotFocus"
-                     Text="{Binding RoleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding RoleDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      BorderBrush="#006666"
                      BorderThickness="1"
                      Style="{StaticResource text_input_1}"/>
