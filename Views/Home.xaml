@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Style="{StaticResource Page_Style}">
+
+
+    
+    
     <Grid Background="#dfebed" >
         
         <Grid>
@@ -21,7 +25,7 @@
 
             <TextBlock Grid.Row="1" Text="Witaj w systemie" Style="{StaticResource nav_font_style}" FontSize="30"/>
             <TextBlock Grid.Row="2" Text="Librius"  Style="{StaticResource nav_font_style}" FontSize="30" />
-
+           
         </Grid>
         
     </Grid>

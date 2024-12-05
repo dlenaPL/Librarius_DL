@@ -32,113 +32,166 @@
         </Grid.ColumnDefinitions>
         
         <!--Navigation Panel-->
+            
+                <Grid>
 
-        <Grid HorizontalAlignment="Left">
+                    <Border Background="#b2d8d8"/>
 
-            <Border Background="#b2d8d8	"/>
-
-            <StackPanel Height="600" 
+                <StackPanel 
                         Grid.Column="0"
                         Margin="0 60 0 0"
-                        VerticalAlignment="Top">
-                
-                <!--Home-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateHomeCommand}"
-                          IsChecked="True">
-                    
-                    <TextBlock Text="GŁÓWNA => " 
+                        VerticalAlignment="Top"
+                        CanVerticallyScroll="True">
+
+                    <!--Home-->
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                              Command="{Binding NavigateHomeCommand}"
+                              IsChecked="True">
+
+                        <TextBlock Text="GŁÓWNA => " 
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Left"
+                                   Padding="20 0 0 0"
+                                   Style="{StaticResource nav_font_style}"/>
+                    </Menu:Btn>
+
+                    <!--Books -->
+                    <Menu:Btn Style="{StaticResource BtnStyle}" 
+                              Command="{Binding NavigateBooksCommand}"
+                              IsChecked="False">
+
+                        <TextBlock Text="KSIĄŻKI => "
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Left"
+                                    Padding="20 0 0 0"
+                                     Style="{StaticResource nav_font_style}"/>
+                    </Menu:Btn>
+
+
+                    <!--Members-->
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                              Command="{Binding NavigateMembersCommand}"
+                              IsChecked="False">
+
+                        <TextBlock Text="CZYTELNICY => "
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Left"
+                                    Padding="20 0 0 0"
+                                   Style="{StaticResource nav_font_style}"/>
+                    </Menu:Btn>
+
+
+
+                    <!--collapsing EDIT menu -->
+
+                    <Menu:Btn   Style="{StaticResource BtnStyle}"
+                                IsChecked="False"
+                                x:Name="btn_edit"
+                                Click="btn_edit_Click">
+
+                        <TextBlock Text="EDYCJA"
+                                   FontWeight="Bold"
+                               HorizontalAlignment="Left"
+                               Padding="20 0 0 0"
                                Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
+                    </Menu:Btn>
 
-                <!--Authors-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateAuthorsCommand}"
-                          IsChecked="False">
-                    
-                    <TextBlock Text="AUTORZY => "
-                               Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
-                
-                <!--Genres-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateGenresCommand}"
-                          IsChecked="False">
+                    <StackPanel x:Name="edit_submenu"
+                                Margin="45 0 0 0">
 
-                    <TextBlock Text="GATUNKI => "
-                               Style="{StaticResource nav_font_style}"/>    
-                </Menu:Btn>
+                        <!--Authors-->
+                        <Menu:Btn Style="{StaticResource BtnStyle}"
+                                  Command="{Binding NavigateAuthorsCommand}"
+                                  IsChecked="False">
 
-                <!--Genres-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigatePublishersCommand}"
-                          IsChecked="False">    
+                            <TextBlock Text="AUTORZY => "
+                                       HorizontalAlignment="Left"
+                                        Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+                        <!--Publishers-->
+                        <Menu:Btn Style="{StaticResource BtnStyle}"
+                                  Command="{Binding NavigatePublishersCommand}"
+                                  IsChecked="False">
 
-                    <TextBlock Text="WYDAWCY => "
-                               Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
+                            <TextBlock Text="WYDAWCY => "
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+                        <!--Genres-->
+                        <Menu:Btn Style="{StaticResource BtnStyle}"
+                                  Command="{Binding NavigateGenresCommand}"
+                                  IsChecked="False">
 
-                <!--Members-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateMembersCommand}"
-                          IsChecked="False">
+                            <TextBlock Text="GATUNKI => "
+                                       HorizontalAlignment="Left"
+                                        Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+                        <!--Statuses-->
+                        <Menu:Btn Style="{StaticResource BtnStyle}"
+                                  Command="{Binding NavigateStatusesCommand}"
+                                  IsChecked="False">
 
-                    <TextBlock Text="CZYTELNICY => "
-                               Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
-                
-                <!--Statuses-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateStatusesCommand}"
-                          IsChecked="False">
+                            <TextBlock Text="DOSTĘPNOŚĆ => "
+                                        HorizontalAlignment="Left"
+                                        Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+                        <!--Book Conditions-->
+                        <Menu:Btn Style="{StaticResource BtnStyle}"
+                                  Command="{Binding NavigateConditionsCommand}"
+                                  IsChecked="False">
 
-                    <TextBlock Text="DOSTĘPNOŚĆ => "
-                               Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
-                
-                <!--Roles-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateRolesCommand}"
-                          IsChecked="False">
+                            <TextBlock Text="STANY KSIĄŻEK => "
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
 
-                    <TextBlock Text="UPRAWNIENIA => "
-                               Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
-                
-                <!--Fine statuses-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateFineStatusesCommand}"
-                          IsChecked="False">
 
-                    <TextBlock Text="STANY POTRĄCEŃ => "
-                               Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
-                
-                <!--Book Conditions-->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                          Command="{Binding NavigateConditionsCommand}"
-                          IsChecked="False">
+                    </StackPanel>
 
-                    <TextBlock Text="STANY KSIĄŻEK => "
-                               Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
+                    <!--collapsing SETTINGS menu -->
+                    <Menu:Btn   Style="{StaticResource BtnStyle}"
+                                IsChecked="False"
+                                x:Name="btn_settings"
+                                Click="btn_settings_Click">
 
-                <!--Books -->
-                <Menu:Btn Style="{StaticResource BtnStyle}"
-                            Command="{Binding NavigateBooksCommand}"
-                            IsChecked="False">    
+                        <TextBlock Text="USTAWIENIA"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Left"
+                                   Padding="20 0 0 0"
+                                   Style="{StaticResource nav_font_style}"/>
+                    </Menu:Btn>
 
-                    <TextBlock Text="KSIĄŻKI => "
-                                Style="{StaticResource nav_font_style}"/>
-                </Menu:Btn>
-                    
-                    
+                    <StackPanel x:Name="settings_submenu"
+                                  Margin="45 0 0 0">
+
+                        <!--Fine statuses-->
+                        <Menu:Btn Style="{StaticResource BtnStyle}"
+                                  Command="{Binding NavigateFineStatusesCommand}"
+                                  IsChecked="False">
+
+                            <TextBlock Text="POTRĄCENIA => "
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+                        <!--Roles-->
+                        <Menu:Btn Style="{StaticResource BtnStyle}"
+                                    Command="{Binding NavigateRolesCommand}"
+                                    IsChecked="False">
+
+                            <TextBlock Text="UPRAWNIENIA => "
+                                       
+                                        HorizontalAlignment="Left"
+                                         Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+
+                    </StackPanel>
 
                 </StackPanel>
 
-        </Grid>
-        
-        <!--Page View-->
+
+            </Grid>
+           
+            <!--Page View-->
         <Grid Grid.Column="1"
               HorizontalAlignment="Stretch">
             
