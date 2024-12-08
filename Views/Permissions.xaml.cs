@@ -1,11 +1,11 @@
 ﻿namespace Librarius_DL.Views
 {
     /// <summary>
-    /// Interaction logic for Books.xaml
+    /// Interaction logic for Permissions.xaml
     /// </summary>
-    public partial class Books : AllViewBase
+    public partial class Permissions : AllViewBase
     {
-        public Books()
+        public Permissions()
         {
             InitializeComponent();
         }

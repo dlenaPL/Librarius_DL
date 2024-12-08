@@ -1,0 +1,41 @@
+﻿<local:AllViewBase x:Class="Librarius_DL.Views.BookCopies"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Librarius_DL.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:viewmodels="clr-namespace:Librarius_DL.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:BookCopiesVM}"
+             Style="{StaticResource Page_Style}">
+
+    <Grid>
+        <Grid>
+            <DataGrid  AutoGenerateColumns="False" 
+                    CanUserAddRows="False"
+                    IsReadOnly="True"
+                    CanUserResizeRows="False"
+                    RowHeaderWidth="0"
+                    FontSize="14"
+                    ItemsSource="{Binding List}" 
+                    Margin="5 0 5 0">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Binding="{Binding Path=BookCopyID}" 
+                                     Header="Nr"/>
+                    <DataGridTextColumn Binding="{Binding Path=BookTitle}" 
+                                     Header="Tytuł"/>
+                    <DataGridTextColumn Binding="{Binding Path=CopyStatus}" 
+                                     Header="Dostępność"/>
+                    <DataGridTextColumn Binding="{Binding Path=CopyCondition}" 
+                                     Header="Stan"/>
+                    <DataGridTextColumn Binding="{Binding Path=QRCode}" 
+                                     Header="Kod QR"
+                                     Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</local:AllViewBase>

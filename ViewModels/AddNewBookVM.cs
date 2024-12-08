@@ -2,14 +2,7 @@
 using Librarius_DL.Utilities;
 using Librarius_DL.Utilities.BusinessLogic;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity.Validation;
-using System.Globalization;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Effects;
 
 namespace Librarius_DL.ViewModels
 {
@@ -139,11 +132,9 @@ namespace Librarius_DL.ViewModels
         {
 
             if (string.IsNullOrWhiteSpace(item.Title)) item.Title = "Tytuł...";
-            if (string.IsNullOrWhiteSpace(item.ISBN)) item.ISBN = GenerateRandomNumber().ToString();
             if (string.IsNullOrWhiteSpace(item.PublishedYear)) item.PublishedYear = "Rok wydania...";
             if (string.IsNullOrWhiteSpace(item.Description)) item.Description = "Opis...";
             if (string.IsNullOrWhiteSpace(item.CoverImagePath)) item.CoverImagePath = "Okładka...";
-
 
             DataBaseClass.Instance.Books.Add(item);
             DataBaseClass.Instance.SaveChanges();

@@ -1,16 +1,10 @@
 ﻿using Librarius_DL.Models.Entities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Librarius_DL.Utilities.BusinessLogic
 {
     public static class DataBaseClass
     {
-
 
         private static LibraryEntities _instance;
 
@@ -24,11 +18,6 @@ namespace Librarius_DL.Utilities.BusinessLogic
             }
         }
 
-        //public LibraryEntities LibraryEntities { get; set; }
-        //public DataBaseClass()
-        //{
-        //    this.LibraryEntities = LibraryEntities;
-        //}
 
         public static IQueryable<KeyAndValue> GetAllStatuses()
         {
@@ -40,6 +29,7 @@ namespace Librarius_DL.Utilities.BusinessLogic
                     Value = statuses.StatusName
                 }).ToList().AsQueryable();
         }
+
         public static IQueryable<KeyAndValue> GetAllPublishers()
         {
             return (
@@ -51,6 +41,26 @@ namespace Librarius_DL.Utilities.BusinessLogic
                 }).ToList().AsQueryable();
         }
 
+        public static IQueryable<KeyAndValue> GetAllConditions()
+        {
+            return (
+                from condition in DataBaseClass.Instance.Conditions
+                select new KeyAndValue
+                {
+                    Key = condition.ConditionID,
+                    Value = condition.ConditionName
+                }).ToList().AsQueryable();
+        }
 
+        public static IQueryable<KeyAndValue> GetAllBooks()
+        {
+            return (
+                from book in DataBaseClass.Instance.Books
+                select new KeyAndValue
+                {
+                    Key = book.BookID,
+                    Value = book.Title
+                }).ToList().AsQueryable();
+        }
     }
 }

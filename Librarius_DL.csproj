@@ -69,6 +69,7 @@
     </ApplicationDefinition>
     <Compile Include="Utilities\AddNewItemVM.cs" />
     <Compile Include="Utilities\AllViewModel.cs" />
+    <Compile Include="Utilities\BookCopiesForView.cs" />
     <Compile Include="Utilities\BooksForView.cs" />
     <Compile Include="Utilities\Btn.cs" />
     <Compile Include="Utilities\BusinessLogic\DataBaseClass.cs" />
@@ -76,15 +77,18 @@
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
     <Compile Include="ViewModels\AddNewAuthorVM.cs" />
+    <Compile Include="ViewModels\AddNewBookCopyVM.cs" />
     <Compile Include="ViewModels\AddNewBookVM.cs" />
     <Compile Include="ViewModels\AddNewConditionVM.cs" />
     <Compile Include="ViewModels\AddNewFineStatusVM.cs" />
     <Compile Include="ViewModels\AddNewGenreVM.cs" />
     <Compile Include="ViewModels\AddNewMemberVM.cs" />
+    <Compile Include="ViewModels\AddNewPermissionVM.cs" />
     <Compile Include="ViewModels\AddNewPublisherVM.cs" />
     <Compile Include="ViewModels\AddNewRoleVM.cs" />
     <Compile Include="ViewModels\AddNewStatusVM.cs" />
     <Compile Include="ViewModels\AuthorsVM.cs" />
+    <Compile Include="ViewModels\BookCopiesVM.cs" />
     <Compile Include="ViewModels\BooksVM.cs" />
     <Compile Include="ViewModels\ConditionsVM.cs" />
     <Compile Include="ViewModels\FineStatusesVM.cs" />
@@ -92,6 +96,7 @@
     <Compile Include="ViewModels\HomeVM.cs" />
     <Compile Include="ViewModels\MembersVM.cs" />
     <Compile Include="ViewModels\NavigationVM.cs" />
+    <Compile Include="ViewModels\PermissionsVM.cs" />
     <Compile Include="ViewModels\PublishersVM.cs" />
     <Compile Include="ViewModels\RolesVM.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />
@@ -101,6 +106,9 @@
     </Compile>
     <Compile Include="Views\AddNewBook.xaml.cs">
       <DependentUpon>AddNewBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNewBookCopy.xaml.cs">
+      <DependentUpon>AddNewBookCopy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddNewCondition.xaml.cs">
       <DependentUpon>AddNewCondition.xaml</DependentUpon>
@@ -115,6 +123,9 @@
     <Compile Include="Views\AddNewMember.xaml.cs">
       <DependentUpon>AddNewMember.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddNewPermission.xaml.cs">
+      <DependentUpon>AddNewPermission.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNewPublisher.xaml.cs">
       <DependentUpon>AddNewPublisher.xaml</DependentUpon>
     </Compile>
@@ -127,6 +138,9 @@
     <Compile Include="Views\AllViewBase.cs" />
     <Compile Include="Views\Authors.xaml.cs">
       <DependentUpon>Authors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BookCopies.xaml.cs">
+      <DependentUpon>BookCopies.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Books.xaml.cs">
       <DependentUpon>Books.xaml</DependentUpon>
@@ -148,6 +162,9 @@
     </Compile>
     <Compile Include="Views\Members.xaml.cs">
       <DependentUpon>Members.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Permissions.xaml.cs">
+      <DependentUpon>Permissions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Publishers.xaml.cs">
       <DependentUpon>Publishers.xaml</DependentUpon>
@@ -213,6 +230,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddNewBookCopy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddNewCondition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -229,6 +250,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddNewPermission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddNewPublisher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -242,6 +267,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Authors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BookCopies.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -270,6 +299,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Members.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Permissions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

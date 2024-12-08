@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,8 @@ namespace Librarius_DL
         {
             InitializeComponent();
             hideSubMenus();
+      
         }
-
-
 
         private void toggleVisibility(StackPanel panel)
         {
@@ -42,6 +42,9 @@ namespace Librarius_DL
             settings_submenu.Visibility = Visibility.Collapsed;
         }
 
+
+
+
         private void clearRadioBtnsIsChecked(StackPanel sp)
         {
             foreach (RadioButton r in sp.Children)
@@ -49,6 +52,8 @@ namespace Librarius_DL
                 if (r.IsChecked == true) r.IsChecked = false;
             }
         }
+
+
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
