@@ -87,11 +87,69 @@
                             <TextBlock Text="CZYTELNICY => "
                                    FontWeight="Bold"
                                    HorizontalAlignment="Left"
-                                    Padding="20 0 0 0"
+                                   Padding="20 0 0 0"
                                    Style="{StaticResource nav_font_style}"/>
                         </Menu:Btn>
 
+                        <!--Staff -->
+                        <Menu:Btn Style="{StaticResource BtnStyle}" 
+                                  Command="{Binding NavigateStaffCommand}"
+                                  IsChecked="False">
 
+                           <TextBlock Text="ZAŁOGA => "
+                                      FontWeight="Bold"
+                                      HorizontalAlignment="Left"
+                                      Padding="20 0 0 0"
+                                      Style="{StaticResource nav_font_style}"/>     
+                        </Menu:Btn>
+
+                        <!--Transactions -->
+                        <Menu:Btn Style="{StaticResource BtnStyle}" 
+                                  Command="{Binding NavigateTransactionsCommand}"
+                                  IsChecked="False">
+
+                            <TextBlock Text="WYPOŻYCZENIA => "
+                                      FontWeight="Bold"
+                                      HorizontalAlignment="Left"
+                                      Padding="20 0 0 0"
+                                      Style="{StaticResource nav_font_style}"/>
+                                                </Menu:Btn>
+
+                        <!--Fines -->
+                        <Menu:Btn Style="{StaticResource BtnStyle}" 
+                              Command="{Binding NavigateFinesCommand}"
+                              IsChecked="False">
+
+                            <TextBlock Text="KARY => "
+                                          FontWeight="Bold"
+                                          HorizontalAlignment="Left"
+                                          Padding="20 0 0 0"
+                                          Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+
+                        <!--Notifications -->
+                        <Menu:Btn Style="{StaticResource BtnStyle}" 
+                              Command="{Binding NavigateNotificationsCommand}"
+                              IsChecked="False">
+
+                            <TextBlock Text="POWIADOMIENIA => "
+                                      FontWeight="Bold"
+                                      HorizontalAlignment="Left"
+                                      Padding="20 0 0 0"
+                                     Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+                        
+                        <!--Reservations -->
+                        <Menu:Btn Style="{StaticResource BtnStyle}" 
+                              Command="{Binding NavigateReservationsCommand}"
+                              IsChecked="False">
+
+                            <TextBlock Text="REZERWACJE => "
+                                      FontWeight="Bold"
+                                      HorizontalAlignment="Left"
+                                      Padding="20 0 0 0"
+                                     Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
 
                         <!--collapsing EDIT menu -->
 

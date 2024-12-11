@@ -29,7 +29,6 @@ namespace Librarius_DL.Utilities.BusinessLogic
                     Value = statuses.StatusName
                 }).ToList().AsQueryable();
         }
-
         public static IQueryable<KeyAndValue> GetAllPublishers()
         {
             return (
@@ -40,7 +39,6 @@ namespace Librarius_DL.Utilities.BusinessLogic
                     Value = publisher.PublisherName
                 }).ToList().AsQueryable();
         }
-
         public static IQueryable<KeyAndValue> GetAllConditions()
         {
             return (
@@ -51,7 +49,6 @@ namespace Librarius_DL.Utilities.BusinessLogic
                     Value = condition.ConditionName
                 }).ToList().AsQueryable();
         }
-
         public static IQueryable<KeyAndValue> GetAllBooks()
         {
             return (
@@ -62,5 +59,56 @@ namespace Librarius_DL.Utilities.BusinessLogic
                     Value = book.Title
                 }).ToList().AsQueryable();
         }
+        public static IQueryable<KeyAndValue> GetAllRoles()
+        {
+            return (
+                from role in DataBaseClass.Instance.Roles
+                select new KeyAndValue
+                {
+                    Key = role.RoleID,
+                    Value = role.RoleName
+                }).ToList().AsQueryable();
+        }
+        public static IQueryable<KeyAndValue> GetAllMembers()
+        {
+            return (
+                from member in DataBaseClass.Instance.Members
+                select new KeyAndValue
+                {
+                    Key = member.MemberID,
+                    Value = member.FirstName + " " + member.LastName,
+                }).ToList().AsQueryable();
+        }
+        public static IQueryable<KeyAndValue> GetAllStaff()
+        {
+            return (
+                from staff in DataBaseClass.Instance.Staff
+                select new KeyAndValue
+                {
+                    Key = staff.StaffID,
+                    Value = staff.FirstName + " " + staff.LastName,
+                }).ToList().AsQueryable();
+        }
+        public static IQueryable<KeyAndValue> GetAllTransactions()
+        {
+            return (
+                from transaction in DataBaseClass.Instance.Transactions
+                select new KeyAndValue
+                {
+                    Key = transaction.TransactionID,
+                    Value = transaction.TransactionID.ToString(),
+                }).ToList().AsQueryable();
+        }
+        public static IQueryable<KeyAndValue> GetAllFineStatuses()
+        {
+            return (
+                from stat in DataBaseClass.Instance.FineStatuses
+                select new KeyAndValue
+                {
+                    Key = stat.FineStatusID,
+                    Value = stat.FineStatusName,
+                }).ToList().AsQueryable();
+        }
+
     }
 }

@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Gatunek" Style="{StaticResource nav_font_style}"/>
+            <TextBlock Grid.Column="0" Text="Status" Style="{StaticResource nav_font_style}"/>
             <TextBox Background="#b2d8d8" 
              Grid.Column="1" 
              Name="tbStatusName"

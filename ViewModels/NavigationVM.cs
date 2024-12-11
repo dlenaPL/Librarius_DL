@@ -1,10 +1,4 @@
 ﻿using Librarius_DL.Utilities;
-using Librarius_DL.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Librarius_DL.ViewModels
@@ -30,6 +24,11 @@ namespace Librarius_DL.ViewModels
         public ICommand NavigateBooksCommand { get; set; }
         public ICommand NavigatePermissionsCommand { get; set; }
         public ICommand NavigateBookCopiesCommand { get; set; }
+        public ICommand NavigateStaffCommand { get; set; }
+        public ICommand NavigateTransactionsCommand { get; set; }
+        public ICommand NavigateFinesCommand { get; set; }
+        public ICommand NavigateNotificationsCommand { get; set; }
+        public ICommand NavigateReservationsCommand { get; set; }
 
         
 
@@ -45,6 +44,11 @@ namespace Librarius_DL.ViewModels
         private void Books(object obj) => CurrentView = new BooksVM();
         private void Permissions(object obj) => CurrentView = new PermissionsVM();
         private void BookCopies(object obj) => CurrentView = new BookCopiesVM();
+        private void Staff(object obj) => CurrentView = new StaffVM();
+        private void Transaction(object obj) => CurrentView = new TransactionsVM();
+        private void Fines(object obj) => CurrentView = new FinesVM();
+        private void Notifications(object obj) => CurrentView = new NotificationsVM();
+        private void Reservations(object obj) => CurrentView = new ReservationsVM();
 
 
         public NavigationVM() 
@@ -61,6 +65,12 @@ namespace Librarius_DL.ViewModels
             NavigateBooksCommand = new RelayCommand(Books);
             NavigatePermissionsCommand = new RelayCommand(Permissions);
             NavigateBookCopiesCommand = new RelayCommand(BookCopies);
+            NavigateStaffCommand = new RelayCommand(Staff);
+            NavigateTransactionsCommand = new RelayCommand(Transaction);
+            NavigateFinesCommand = new RelayCommand(Fines);
+            NavigateNotificationsCommand = new RelayCommand(Notifications);
+            NavigateReservationsCommand = new RelayCommand(Reservations);
+
 
             CurrentView = new HomeVM();
         }

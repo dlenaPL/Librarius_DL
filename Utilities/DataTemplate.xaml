@@ -54,6 +54,27 @@
     <DataTemplate DataType="{x:Type vm:BookCopiesVM}">
         <view:BookCopies />
     </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:StaffVM}">
+        <view:Staff />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:TransactionsVM}">
+        <view:Transactions />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:FinesVM}">
+        <view:Fines />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NotificationsVM}">
+        <view:Notifications />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ReservationsVM}">
+        <view:Reservations />
+    </DataTemplate>
+
 
 
 

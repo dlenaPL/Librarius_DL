@@ -73,34 +73,49 @@
     <Compile Include="Utilities\BooksForView.cs" />
     <Compile Include="Utilities\Btn.cs" />
     <Compile Include="Utilities\BusinessLogic\DataBaseClass.cs" />
+    <Compile Include="Utilities\FinesForView.cs" />
     <Compile Include="Utilities\KeyAndValue.cs" />
+    <Compile Include="Utilities\NotificationsForView.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="Utilities\ReservationsForView.cs" />
+    <Compile Include="Utilities\StaffForView.cs" />
+    <Compile Include="Utilities\TransactionForView.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
     <Compile Include="ViewModels\AddNewAuthorVM.cs" />
     <Compile Include="ViewModels\AddNewBookCopyVM.cs" />
     <Compile Include="ViewModels\AddNewBookVM.cs" />
     <Compile Include="ViewModels\AddNewConditionVM.cs" />
+    <Compile Include="ViewModels\AddNewFineVM.cs" />
     <Compile Include="ViewModels\AddNewFineStatusVM.cs" />
     <Compile Include="ViewModels\AddNewGenreVM.cs" />
     <Compile Include="ViewModels\AddNewMemberVM.cs" />
+    <Compile Include="ViewModels\AddNewNotificationVM.cs" />
     <Compile Include="ViewModels\AddNewPermissionVM.cs" />
     <Compile Include="ViewModels\AddNewPublisherVM.cs" />
+    <Compile Include="ViewModels\AddNewReservationVM.cs" />
     <Compile Include="ViewModels\AddNewRoleVM.cs" />
+    <Compile Include="ViewModels\AddNewStaffVM.cs" />
     <Compile Include="ViewModels\AddNewStatusVM.cs" />
+    <Compile Include="ViewModels\AddNewTransactionVM.cs" />
     <Compile Include="ViewModels\AuthorsVM.cs" />
     <Compile Include="ViewModels\BookCopiesVM.cs" />
     <Compile Include="ViewModels\BooksVM.cs" />
     <Compile Include="ViewModels\ConditionsVM.cs" />
     <Compile Include="ViewModels\FineStatusesVM.cs" />
+    <Compile Include="ViewModels\FinesVM.cs" />
     <Compile Include="ViewModels\GenresVM.cs" />
     <Compile Include="ViewModels\HomeVM.cs" />
     <Compile Include="ViewModels\MembersVM.cs" />
     <Compile Include="ViewModels\NavigationVM.cs" />
+    <Compile Include="ViewModels\NotificationsVM.cs" />
     <Compile Include="ViewModels\PermissionsVM.cs" />
     <Compile Include="ViewModels\PublishersVM.cs" />
+    <Compile Include="ViewModels\ReservationsVM.cs" />
     <Compile Include="ViewModels\RolesVM.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />
+    <Compile Include="ViewModels\StaffVM.cs" />
     <Compile Include="ViewModels\StatusesVM.cs" />
+    <Compile Include="ViewModels\TransactionsVM.cs" />
     <Compile Include="Views\AddNewAuthor.xaml.cs">
       <DependentUpon>AddNewAuthor.xaml</DependentUpon>
     </Compile>
@@ -113,6 +128,9 @@
     <Compile Include="Views\AddNewCondition.xaml.cs">
       <DependentUpon>AddNewCondition.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddNewFine.xaml.cs">
+      <DependentUpon>AddNewFine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNewFineStatus.xaml.cs">
       <DependentUpon>AddNewFineStatus.xaml</DependentUpon>
     </Compile>
@@ -123,17 +141,29 @@
     <Compile Include="Views\AddNewMember.xaml.cs">
       <DependentUpon>AddNewMember.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddNewNotification.xaml.cs">
+      <DependentUpon>AddNewNotification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNewPermission.xaml.cs">
       <DependentUpon>AddNewPermission.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddNewPublisher.xaml.cs">
       <DependentUpon>AddNewPublisher.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddNewReservation.xaml.cs">
+      <DependentUpon>AddNewReservation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNewRole.xaml.cs">
       <DependentUpon>AddNewRole.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddNewStaff.xaml.cs">
+      <DependentUpon>AddNewStaff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddNewStatus.xaml.cs">
       <DependentUpon>AddNewStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNewTransaction.xaml.cs">
+      <DependentUpon>AddNewTransaction.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AllViewBase.cs" />
     <Compile Include="Views\Authors.xaml.cs">
@@ -151,6 +181,9 @@
     <Compile Include="Views\CustomControls\CustomTextBoxWithClearBtn.xaml.cs">
       <DependentUpon>CustomTextBoxWithClearBtn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Fines.xaml.cs">
+      <DependentUpon>Fines.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FineStatuses.xaml.cs">
       <DependentUpon>FineStatuses.xaml</DependentUpon>
     </Compile>
@@ -163,11 +196,17 @@
     <Compile Include="Views\Members.xaml.cs">
       <DependentUpon>Members.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Notifications.xaml.cs">
+      <DependentUpon>Notifications.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Permissions.xaml.cs">
       <DependentUpon>Permissions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Publishers.xaml.cs">
       <DependentUpon>Publishers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reservations.xaml.cs">
+      <DependentUpon>Reservations.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Roles.xaml.cs">
       <DependentUpon>Roles.xaml</DependentUpon>
@@ -175,8 +214,14 @@
     <Compile Include="Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Staff.xaml.cs">
+      <DependentUpon>Staff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Statuses.xaml.cs">
       <DependentUpon>Statuses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transactions.xaml.cs">
+      <DependentUpon>Transactions.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -238,6 +283,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddNewFine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddNewFineStatus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -250,6 +299,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddNewNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddNewPermission.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -258,11 +311,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddNewReservation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddNewRole.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddNewStaff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddNewStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddNewTransaction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -286,6 +351,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Fines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FineStatuses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -302,11 +371,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Notifications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Permissions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Publishers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reservations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -318,7 +395,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Statuses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Transactions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

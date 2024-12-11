@@ -9,8 +9,6 @@ namespace Librarius_DL.ViewModels
     {
         public override void Add()
         {
-
-
             var addNewBookCopyWindow = new AddNewBookCopy();
             var addNewBookCopyVM = (AddNewBookCopyVM) addNewBookCopyWindow.DataContext;
             addNewBookCopyWindow.ShowDialog();
