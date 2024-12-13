@@ -37,11 +37,10 @@
 
                     <Border Background="#b2d8d8"/>
 
-                    <StackPanel 
-                        Grid.Column="0"
-                        Margin="0 60 0 60"
-                        VerticalAlignment="Top"
-                        CanVerticallyScroll="True">
+                    <StackPanel Grid.Column="0"
+                                Margin="0 60 0 60"
+                                VerticalAlignment="Top"
+                                CanVerticallyScroll="True">
 
                         <!--Home-->
                         <Menu:Btn Style="{StaticResource BtnStyle}"
@@ -55,30 +54,8 @@
                                    Style="{StaticResource nav_font_style}"/>
                         </Menu:Btn>
 
-                        <!--Books -->
-                        <Menu:Btn Style="{StaticResource BtnStyle}" 
-                              Command="{Binding NavigateBooksCommand}"
-                              IsChecked="False">
-
-                            <TextBlock Text="KSIĄŻKI => "
-                                   FontWeight="Bold"
-                                   HorizontalAlignment="Left"
-                                    Padding="20 0 0 0"
-                                     Style="{StaticResource nav_font_style}"/>
-                        </Menu:Btn>
+                       
                         
-                        <Menu:Btn Style="{StaticResource BtnStyle}" 
-                              Command="{Binding NavigateBookCopiesCommand}"
-                              IsChecked="False">
-
-                            <TextBlock Text="EGZEMPLARZE => "
-                                   FontWeight="Bold"
-                                   HorizontalAlignment="Left"
-                                    Padding="20 0 0 0"
-                                     Style="{StaticResource nav_font_style}"/>
-                        </Menu:Btn>
-
-
                         <!--Members-->
                         <Menu:Btn Style="{StaticResource BtnStyle}"
                               Command="{Binding NavigateMembersCommand}"
@@ -89,18 +66,6 @@
                                    HorizontalAlignment="Left"
                                    Padding="20 0 0 0"
                                    Style="{StaticResource nav_font_style}"/>
-                        </Menu:Btn>
-
-                        <!--Staff -->
-                        <Menu:Btn Style="{StaticResource BtnStyle}" 
-                                  Command="{Binding NavigateStaffCommand}"
-                                  IsChecked="False">
-
-                           <TextBlock Text="ZAŁOGA => "
-                                      FontWeight="Bold"
-                                      HorizontalAlignment="Left"
-                                      Padding="20 0 0 0"
-                                      Style="{StaticResource nav_font_style}"/>     
                         </Menu:Btn>
 
                         <!--Transactions -->
@@ -114,31 +79,7 @@
                                       Padding="20 0 0 0"
                                       Style="{StaticResource nav_font_style}"/>
                                                 </Menu:Btn>
-
-                        <!--Fines -->
-                        <Menu:Btn Style="{StaticResource BtnStyle}" 
-                              Command="{Binding NavigateFinesCommand}"
-                              IsChecked="False">
-
-                            <TextBlock Text="KARY => "
-                                          FontWeight="Bold"
-                                          HorizontalAlignment="Left"
-                                          Padding="20 0 0 0"
-                                          Style="{StaticResource nav_font_style}"/>
-                        </Menu:Btn>
-
-                        <!--Notifications -->
-                        <Menu:Btn Style="{StaticResource BtnStyle}" 
-                              Command="{Binding NavigateNotificationsCommand}"
-                              IsChecked="False">
-
-                            <TextBlock Text="POWIADOMIENIA => "
-                                      FontWeight="Bold"
-                                      HorizontalAlignment="Left"
-                                      Padding="20 0 0 0"
-                                     Style="{StaticResource nav_font_style}"/>
-                        </Menu:Btn>
-                        
+    
                         <!--Reservations -->
                         <Menu:Btn Style="{StaticResource BtnStyle}" 
                               Command="{Binding NavigateReservationsCommand}"
@@ -151,23 +92,44 @@
                                      Style="{StaticResource nav_font_style}"/>
                         </Menu:Btn>
 
-                        <!--collapsing EDIT menu -->
+                        <!--Notifications -->
+                        <Menu:Btn Style="{StaticResource BtnStyle}" 
+                                  Command="{Binding NavigateNotificationsCommand}"
+                                  IsChecked="False">
 
+                                <TextBlock Text="POWIADOMIENIA => "
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Left"
+                                            Padding="20 0 0 0"
+                                            Style="{StaticResource nav_font_style}"/>
+                        </Menu:Btn>
+
+
+
+                        <!--collapsing EDIT menu -->
                         <Menu:Btn   Style="{StaticResource BtnStyle}"
-                                IsChecked="False"
-                                x:Name="btn_edit"
-                                Click="btn_edit_Click">
+                                    IsChecked="False"
+                                    x:Name="btn_edit"
+                                    Click="btn_edit_Click">
 
                             <TextBlock Text="EDYCJA"
                                    FontWeight="Bold"
-                               HorizontalAlignment="Left"
-                               Padding="20 0 0 0"
-                               Style="{StaticResource nav_font_style}"/>
+                                   HorizontalAlignment="Left"
+                                   Padding="20 0 0 0"
+                                   Style="{StaticResource nav_font_style}"/>
                         </Menu:Btn>
-
                         <StackPanel x:Name="edit_submenu"
-                                Margin="45 0 0 0">
+                                    Margin="45 0 0 0">
 
+                            <!--Books -->
+                            <Menu:Btn Style="{StaticResource BtnStyle}" 
+                                       Command="{Binding NavigateBooksCommand}"
+                                       IsChecked="False">
+
+                                <TextBlock Text="KSIĄŻKI => "
+                                            HorizontalAlignment="Left"
+                                              Style="{StaticResource nav_font_style}"/>
+                            </Menu:Btn>
                             <!--Authors-->
                             <Menu:Btn Style="{StaticResource BtnStyle}"
                                   Command="{Binding NavigateAuthorsCommand}"
@@ -204,14 +166,32 @@
                                         HorizontalAlignment="Left"
                                         Style="{StaticResource nav_font_style}"/>
                             </Menu:Btn>
-                            <!--Book Conditions-->
-                            <Menu:Btn Style="{StaticResource BtnStyle}"
-                                  Command="{Binding NavigateConditionsCommand}"
-                                  IsChecked="False">
+                            <!--Book Copies-->
+                            <Menu:Btn Style="{StaticResource BtnStyle}" 
+                                      Command="{Binding NavigateBookCopiesCommand}"
+                                      IsChecked="False">
 
-                                <TextBlock Text="STANY KSIĄŻEK => "
-                                       HorizontalAlignment="Left"
-                                       Style="{StaticResource nav_font_style}"/>
+                                <TextBlock Text="EGZEMPLARZE => "
+                                           HorizontalAlignment="Left"
+                                             Style="{StaticResource nav_font_style}"/>
+                            </Menu:Btn>
+                            <!--Fines -->
+                            <Menu:Btn Style="{StaticResource BtnStyle}" 
+                                      Command="{Binding NavigateFinesCommand}"
+                                      IsChecked="False">
+
+                                <TextBlock Text="KARY => "
+                                          HorizontalAlignment="Left"
+                                          Style="{StaticResource nav_font_style}"/>
+                            </Menu:Btn>
+                            <!--Staff -->
+                            <Menu:Btn Style="{StaticResource BtnStyle}" 
+                                      Command="{Binding NavigateStaffCommand}"
+                                      IsChecked="False">
+
+                                <TextBlock Text="ZAŁOGA => "
+                                          HorizontalAlignment="Left"
+                                          Style="{StaticResource nav_font_style}"/>
                             </Menu:Btn>
 
 
@@ -229,10 +209,17 @@
                                    Padding="20 0 0 0"
                                    Style="{StaticResource nav_font_style}"/>
                         </Menu:Btn>
-
                         <StackPanel x:Name="settings_submenu"
-                                  Margin="45 0 0 0">
+                                    Margin="45 0 0 0">
+                            <!--Book Conditions-->
+                            <Menu:Btn Style="{StaticResource BtnStyle}"
+                                  Command="{Binding NavigateConditionsCommand}"
+                                  IsChecked="False">
 
+                                <TextBlock Text="STANY KSIĄŻEK => "
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource nav_font_style}"/>
+                            </Menu:Btn>
                             <!--Fine statuses-->
                             <Menu:Btn Style="{StaticResource BtnStyle}"
                                   Command="{Binding NavigateFineStatusesCommand}"
@@ -251,7 +238,6 @@
                                         HorizontalAlignment="Left"
                                          Style="{StaticResource nav_font_style}"/>
                             </Menu:Btn>
-
                             <!--Permissions-->
                             <Menu:Btn Style="{StaticResource BtnStyle}"
                                  Command="{Binding NavigatePermissionsCommand}"
@@ -261,8 +247,6 @@
                                      HorizontalAlignment="Left"
                                       Style="{StaticResource nav_font_style}"/>
                             </Menu:Btn>
-
-
 
                         </StackPanel>
 
