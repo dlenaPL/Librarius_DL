@@ -1,5 +1,6 @@
 ﻿using Librarius_DL.Utilities;
 using Librarius_DL.Views;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -31,6 +32,37 @@ namespace Librarius_DL.ViewModels
                    ContactInfo = staff.ContactInfo
 
                });
+        }
+
+        public override void Find()
+        {
+            Load();
+            if (FindField == "Imię")
+                List = new ObservableCollection<StaffForView>(List.Where(item => item.FirstName != null && item.FirstName.StartsWith(FindTextBox)));
+            if (FindField == "Nazwisko")
+                List = new ObservableCollection<StaffForView>(List.Where(item => item.LastName != null && item.LastName.StartsWith(FindTextBox)));
+            if (FindField == "Rola")
+                List = new ObservableCollection<StaffForView>(List.Where(item => item.RoleName != null && item.RoleName.StartsWith(FindTextBox)));
+        }
+
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "Imię", "Nazwisko", "Rola" };
+        }
+
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "Imię", "Nazwisko", "Rola" };
+        }
+
+        
+
+        public override void Sort()
+        {
+
+            if (SortField == "Imię") List = new ObservableCollection<StaffForView>(List.OrderBy(item => item.FirstName));
+            if (SortField == "Nazwisko") List = new ObservableCollection<StaffForView>(List.OrderBy(item => item.LastName));
+            if (SortField == "Rola") List = new ObservableCollection<StaffForView>(List.OrderBy(item => item.RoleName));
         }
     }
 }

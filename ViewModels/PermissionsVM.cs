@@ -30,5 +30,28 @@ namespace Librarius_DL.ViewModels
 
             Load();
         }
+
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "Nazwa" };
+        }
+
+        public override void Sort()
+        {
+            if (SortField == "Nazwa") List = new ObservableCollection<Permissions>(List.OrderBy(item => item.PermissionName));
+        }
+
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "Nazwa" };
+        }
+
+        public override void Find()
+        {
+            Load();
+            if (FindField == "Nazwa")
+                List = new ObservableCollection<Permissions>(List.Where(item => item.PermissionName != null && item.PermissionName.StartsWith(FindTextBox)));
+        }
+
     }
 }

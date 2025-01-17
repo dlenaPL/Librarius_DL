@@ -27,7 +27,6 @@ namespace Librarius_DL.Utilities
             }
         }
 
-
         private RelayCommand _addCommand;
         public ICommand AddCommand
         {
@@ -41,6 +40,63 @@ namespace Librarius_DL.Utilities
                 return _addCommand;
             }
         }
+
+        //do sortowania
+        public string SortField { get; set; }
+        public List<string> SortComboboxItems 
+        { 
+            get
+            {
+                return GetComboboxSortList();
+            }
+        }
+        public abstract List<string> GetComboboxSortList();
+
+        private RelayCommand _sortCommand;
+        public ICommand SortCommand
+        {
+            get
+            {
+                if (_sortCommand == null)
+                    _sortCommand = new RelayCommand(
+                        execute: _ => Sort(),
+                        canExecute: _ => true
+                    );
+                return _sortCommand;
+            }
+        }
+
+        public abstract void Sort();
+
+        // do filtrowania
+
+        public string FindField { get; set; }
+        public List<string> FindComboboxItems
+        {
+            get
+            {
+                return GetComboboxFindList();
+            }
+        }
+        public abstract List<string> GetComboboxFindList();
+
+        private RelayCommand _findCommand;
+        public ICommand FindCommand
+        {
+            get
+            {
+                if (_findCommand == null)
+                    _findCommand = new RelayCommand(
+                        execute: _ => Find(),
+                        canExecute: _ => true
+                    );
+                return _findCommand;
+            }
+        }
+
+        public abstract void Find();
+        public string FindTextBox { get; set; }
+
 
         private ObservableCollection<T> _List;
         public ObservableCollection<T> List

@@ -1,5 +1,6 @@
 ﻿using Librarius_DL.Utilities;
 using Librarius_DL.Views;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -17,6 +18,7 @@ namespace Librarius_DL.ViewModels
             Load();
         }
 
+
         public override void Load()
         {
             List = new ObservableCollection<BooksForView>(
@@ -33,6 +35,32 @@ namespace Librarius_DL.ViewModels
                    BookStatus = book.Statuses.StatusName,
                    BookQRCode = book.QRCode
                });
+        }
+
+        public override void Find()
+        {
+            Load();
+            if (FindField == "Tytuł")
+                List = new ObservableCollection<BooksForView>(List.Where(item => item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox)));
+            if (FindField == "ISBN")
+                List = new ObservableCollection<BooksForView>(List.Where(item => item.ISBN != null && item.ISBN.StartsWith(FindTextBox)));
+        }
+
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "Tytuł", "ISBN" };
+        }
+
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "Tytuł", "Rok wydania"};
+        }
+
+        public override void Sort()
+        {
+            if (SortField == "Tytuł") List = new ObservableCollection<BooksForView>(List.OrderBy(item => item.BookTitle));
+            if (SortField == "Rok wydania") List = new ObservableCollection<BooksForView>(List.OrderBy(item => item.PublishedYear));
+            
         }
     }
 }

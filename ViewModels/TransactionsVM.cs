@@ -2,6 +2,7 @@
 using Librarius_DL.Utilities;
 using Librarius_DL.Views;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -11,10 +12,6 @@ namespace Librarius_DL.ViewModels
     {
         public override void Add()
         {
-
-            //var addNewStaffWindow = new AddNewStaff();
-            //var addNewStaffVM = (AddNewStaffVM)addNewStaffWindow.DataContext;
-            //addNewStaffWindow.ShowDialog();
 
             var addNewTransactionWindow = new AddNewTransaction();
             var addNewTransactionVM = (AddNewTransactionVM)addNewTransactionWindow.DataContext;
@@ -40,6 +37,40 @@ namespace Librarius_DL.ViewModels
                    StaffName = transaction.Staff.FirstName + " " + transaction.Staff.LastName
 
                });
+        }
+
+
+        public override void Find()
+        {
+            Load();
+            if (FindField == "Status")
+                List = new ObservableCollection<TransactionForView>(List.Where(item => item.StatusName != null && item.StatusName.StartsWith(FindTextBox)));
+            if (FindField == "Tytuł")
+                List = new ObservableCollection<TransactionForView>(List.Where(item => item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox)));
+            if (FindField == "Użytkownik")
+                List = new ObservableCollection<TransactionForView>(List.Where(item => item.BorrowerName != null && item.BorrowerName.Contains(FindTextBox)));
+        }
+
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "Status", "Tytuł", "Użytkownik" };
+        }
+
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "Do kiedy", "Oddano", "Od kiedy", "Status", "Tytuł", "Użytkownik" };
+        }
+
+        
+
+        public override void Sort()
+        {
+            if (SortField == "Do kiedy") List = new ObservableCollection<TransactionForView>(List.OrderBy(item => item.CheckoutDate));
+            if (SortField == "Oddano") List = new ObservableCollection<TransactionForView>(List.OrderBy(item => item.ReturnDate));
+            if (SortField == "Od kiedy") List = new ObservableCollection<TransactionForView>(List.OrderBy(item => item.DueDate));
+            if (SortField == "Status") List = new ObservableCollection<TransactionForView>(List.OrderBy(item => item.StatusName));
+            if (SortField == "Tytuł") List = new ObservableCollection<TransactionForView>(List.OrderBy(item => item.BookTitle));
+            if (SortField == "Użytkownik") List = new ObservableCollection<TransactionForView>(List.OrderBy(item => item.BorrowerName));
         }
     }
 }

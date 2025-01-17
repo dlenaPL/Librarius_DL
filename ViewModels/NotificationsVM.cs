@@ -1,5 +1,6 @@
 ﻿using Librarius_DL.Utilities;
 using Librarius_DL.Views;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -16,7 +17,6 @@ namespace Librarius_DL.ViewModels
 
             Load();
         }
-
         public override void Load()
         {
             List = new ObservableCollection<NotificationsForView>(
@@ -31,6 +31,32 @@ namespace Librarius_DL.ViewModels
                    IsRead = mes.IsRead
 
                });
+        }
+
+        public override void Find()
+        {
+            Load();
+            if (FindField == "Tytuł")
+                List = new ObservableCollection<NotificationsForView>(List.Where(item => item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox)));
+            if (FindField == "Użytkownik")
+                List = new ObservableCollection<NotificationsForView>(List.Where(item => item.BorrowersName != null && item.BorrowersName.Contains(FindTextBox)));
+        }
+
+        public override List<string> GetComboboxFindList()
+        {
+            return new List<string> { "Tytuł", "Użytkownik" };
+        }
+
+        public override List<string> GetComboboxSortList()
+        {
+            return new List<string> { "Użytkownik", "Wysłano" };
+        }
+
+       
+        public override void Sort()
+        {
+            if (SortField == "Użytkownik") List = new ObservableCollection<NotificationsForView>(List.OrderBy(item => item.BorrowersName));
+            if (SortField == "Wysłano") List = new ObservableCollection<NotificationsForView>(List.OrderBy(item => item.DateSent));
         }
     }
 }
