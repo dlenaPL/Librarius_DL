@@ -49,6 +49,7 @@ namespace Librarius_DL.Utilities
         public abstract void Add();
         public abstract void Cancel();
 
+        public virtual bool IsValid() => true;
 
     }
 }

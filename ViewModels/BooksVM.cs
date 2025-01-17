@@ -42,7 +42,7 @@ namespace Librarius_DL.ViewModels
         {
             Load();
             if (FindField == "Tytuł")
-                List = new ObservableCollection<BooksForView>(List.Where(item => item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
+                List = new ObservableCollection<BooksForView>(List.Where(item => item.BookTitle != null && item.BookTitle.IndexOf(FindTextBox, StringComparison.OrdinalIgnoreCase) >= 0));
             if (FindField == "ISBN")
                 List = new ObservableCollection<BooksForView>(List.Where(item => item.ISBN != null && item.ISBN.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
         }

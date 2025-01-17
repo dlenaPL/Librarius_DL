@@ -81,6 +81,7 @@
     <Compile Include="Utilities\StaffForView.cs" />
     <Compile Include="Utilities\TransactionForView.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
+    <Compile Include="Validators\Validator.cs" />
     <Compile Include="ViewModels\AddNewAuthorVM.cs" />
     <Compile Include="ViewModels\AddNewBookCopyVM.cs" />
     <Compile Include="ViewModels\AddNewBookVM.cs" />

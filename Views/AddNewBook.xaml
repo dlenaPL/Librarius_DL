@@ -38,7 +38,7 @@
                  Grid.Column="1" 
                  Name="tbBookTitle"
                  GotFocus="TextBox_GotFocus"
-                 Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                  BorderBrush="#006666"
                  BorderThickness="1"
                  Style="{StaticResource text_input_1}"/>
@@ -54,7 +54,7 @@
                      Grid.Column="1" 
                      Name="tbISBN"
                      GotFocus="TextBox_GotFocus"
-                     Text="{Binding ISBN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding ISBN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                      BorderBrush="#006666"
                      BorderThickness="1"
                      Style="{StaticResource text_input_1}"/>    
@@ -70,7 +70,7 @@
                      Grid.Column="1" 
                      Name="tbBookPublishedYear"
                      GotFocus="TextBox_GotFocus"
-                     Text="{Binding PublishedYear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding PublishedYear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                      BorderBrush="#006666"
                      BorderThickness="1"
                      Style="{StaticResource text_input_1}"/>

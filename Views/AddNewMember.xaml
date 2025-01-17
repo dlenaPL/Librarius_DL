@@ -35,7 +35,7 @@
                  Grid.Column="1" 
                  Name="tbMemberName"
                  GotFocus="TextBox_GotFocus"
-                 Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                  BorderBrush="#006666"
                  BorderThickness="1"
                  Style="{StaticResource text_input_1}"/>
@@ -52,7 +52,7 @@
          Grid.Column="1" 
          Name="tbMemberLastName"
          GotFocus="TextBox_GotFocus"
-         Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+         Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
          BorderBrush="#006666"
          BorderThickness="1"
          Style="{StaticResource text_input_1}"/>
@@ -69,7 +69,7 @@
                  Grid.Column="1" 
                  Name="tbMemberContactInfo"
                  GotFocus="TextBox_GotFocus"
-                 Text="{Binding ContactInfo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding ContactInfo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                  BorderBrush="#006666"
                  BorderThickness="1"
                  Style="{StaticResource text_input_1}"/>

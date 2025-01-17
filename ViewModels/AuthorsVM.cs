@@ -28,7 +28,7 @@ namespace Librarius_DL.ViewModels
 
         public override List<string> GetComboboxSortList()
         {
-            return new List<string> {"Nazwa"};
+            return new List<string> { "Imię", "Nazwisko" };
         }
 
         public override void Sort()

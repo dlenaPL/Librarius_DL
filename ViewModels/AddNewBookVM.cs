@@ -1,27 +1,24 @@
 ﻿using Librarius_DL.Models.Entities;
 using Librarius_DL.Utilities;
 using Librarius_DL.Utilities.BusinessLogic;
+using Librarius_DL.Validators;
 using System;
+using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.Pkcs;
+using System.Windows;
 
 namespace Librarius_DL.ViewModels
 {
-    public class AddNewBookVM : AddNewItemVM<Books>
+    public class AddNewBookVM : AddNewItemVM<Books>, IDataErrorInfo
     {
 
-        public static int GenerateRandomNumber()
-        {
-            Random random = new Random();
-            return random.Next(1, 1_000_001); // Górna granica jest wyłączna, więc ustawiamy 1_000_001
-        }
+
 
         public AddNewBookVM()
         {
             
             item = new Books();
-            item.Title = "Tytuł";
-            item.ISBN = GenerateRandomNumber().ToString();
-            item.PublishedYear = "Rok wydania";
             item.Description = "Opis książki";
             item.CoverImagePath = "Okładka";
             item.QRCode = null;
@@ -131,20 +128,56 @@ namespace Librarius_DL.ViewModels
         public override void Add()
         {
 
-            if (string.IsNullOrWhiteSpace(item.Title)) item.Title = "Tytuł...";
-            if (string.IsNullOrWhiteSpace(item.PublishedYear)) item.PublishedYear = "Rok wydania...";
-            if (string.IsNullOrWhiteSpace(item.Description)) item.Description = "Opis...";
-            if (string.IsNullOrWhiteSpace(item.CoverImagePath)) item.CoverImagePath = "Okładka...";
+            
+            if (IsValid())
+            {
+                if (string.IsNullOrWhiteSpace(item.Description)) item.Description = "Opis...";
+                if (string.IsNullOrWhiteSpace(item.CoverImagePath)) item.CoverImagePath = "Okładka...";
 
-            DataBaseClass.Instance.Books.Add(item);
-            DataBaseClass.Instance.SaveChanges();
+                DataBaseClass.Instance.Books.Add(item);
+                DataBaseClass.Instance.SaveChanges();
 
-            CloseAction?.Invoke();
+                MessageBox.Show("Zapisano zmiany.");
+
+                CloseAction?.Invoke();
+            
+
+            }
+            else
+            {
+                MessageBox.Show("Popraw błędy aby zapisać lub wróć do poprzedniego widoku.");
+            }
         }
 
         public override void Cancel()
         {
             CloseAction?.Invoke();
         }
+
+        //---------------------------------validation
+        #region Validation
+
+        public string Error => string.Empty;
+
+        private string _validateMessage = string.Empty;
+        public string this[string propertyName]
+        {
+            get
+            {
+                var validateMessage = string.Empty;
+
+                if (propertyName == nameof(Title)) _validateMessage = Validator.ValidateString(Title);
+                if (propertyName == nameof(PublishedYear)) _validateMessage = Validator.ValidateYear(PublishedYear);
+                if (propertyName == nameof(ISBN)) _validateMessage = Validator.ValidateISBN(ISBN);
+                return _validateMessage;
+            }
+        }
+
+        public override bool IsValid()
+        {
+            return string.IsNullOrEmpty(_validateMessage);
+        }
+
+        #endregion
     }
 }
