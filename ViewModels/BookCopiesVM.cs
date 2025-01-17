@@ -1,5 +1,6 @@
 ﻿using Librarius_DL.Utilities;
 using Librarius_DL.Views;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -54,9 +55,9 @@ namespace Librarius_DL.ViewModels
         {
             Load();
             if (FindField == "Tytuł")
-                List = new ObservableCollection<BookCopiesForView>(List.Where(item=> item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox)));
+                List = new ObservableCollection<BookCopiesForView>(List.Where(item=> item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
             if (FindField == "Stan")
-                List = new ObservableCollection<BookCopiesForView>(List.Where(item => item.CopyCondition != null && item.CopyCondition.StartsWith(FindTextBox)));
+                List = new ObservableCollection<BookCopiesForView>(List.Where(item => item.CopyCondition != null && item.CopyCondition.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
 
         }
 

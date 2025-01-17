@@ -1,5 +1,6 @@
 ﻿using Librarius_DL.Utilities;
 using Librarius_DL.Views;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -37,11 +38,11 @@ namespace Librarius_DL.ViewModels
         {
             Load();
             if (FindField == "Status")
-                List = new ObservableCollection<ReservationsForView>(List.Where(item => item.StatusName != null && item.StatusName.StartsWith(FindTextBox)));
+                List = new ObservableCollection<ReservationsForView>(List.Where(item => item.StatusName != null && item.StatusName.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
             if (FindField == "Tytuł")
-                List = new ObservableCollection<ReservationsForView>(List.Where(item => item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox)));
+                List = new ObservableCollection<ReservationsForView>(List.Where(item => item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
             if (FindField == "Użytkownik")
-                List = new ObservableCollection<ReservationsForView>(List.Where(item => item.BorrowerName != null && item.BorrowerName.Contains(FindTextBox)));
+                List = new ObservableCollection<ReservationsForView>(List.Where(item => item.BorrowerName != null && item.BorrowerName.IndexOf(FindTextBox, StringComparison.OrdinalIgnoreCase) >= 0));
         }
 
         public override List<string> GetComboboxFindList()

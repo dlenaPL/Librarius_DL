@@ -1,4 +1,5 @@
 ﻿using Librarius_DL.Views;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -47,9 +48,9 @@ namespace Librarius_DL.ViewModels
         {
             Load();
             if (FindField == "Imię")
-                List = new ObservableCollection<Members>(List.Where(item => item.FirstName != null && item.FirstName.StartsWith(FindTextBox)));
+                List = new ObservableCollection<Members>(List.Where(item => item.FirstName != null && item.FirstName.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
             if (FindField == "Nazwisko")
-                List = new ObservableCollection<Members>(List.Where(item => item.LastName != null && item.LastName.StartsWith(FindTextBox)));
+                List = new ObservableCollection<Members>(List.Where(item => item.LastName != null && item.LastName.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
         }
     }
 }

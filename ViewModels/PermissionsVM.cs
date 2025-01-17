@@ -50,7 +50,7 @@ namespace Librarius_DL.ViewModels
         {
             Load();
             if (FindField == "Nazwa")
-                List = new ObservableCollection<Permissions>(List.Where(item => item.PermissionName != null && item.PermissionName.StartsWith(FindTextBox)));
+                List = new ObservableCollection<Permissions>(List.Where(item => item.PermissionName != null && item.PermissionName.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
         }
 
     }

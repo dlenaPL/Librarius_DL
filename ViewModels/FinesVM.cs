@@ -1,5 +1,6 @@
 ﻿using Librarius_DL.Utilities;
 using Librarius_DL.Views;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace Librarius_DL.ViewModels
             if (FindField == "Status")
                 List = new ObservableCollection<FinesForView>(List.Where(item => item.FineStatusName != null && item.FineStatusName.StartsWith(FindTextBox)));
             if (FindField == "Transakcja")
-                List = new ObservableCollection<FinesForView>(List.Where(item => item.TransactionID != null && item.TransactionID.ToString().StartsWith(FindTextBox)));
+                List = new ObservableCollection<FinesForView>(List.Where(item => item.TransactionID != null && item.TransactionID.ToString().StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase)));
         }
 
         public override List<string> GetComboboxFindList()

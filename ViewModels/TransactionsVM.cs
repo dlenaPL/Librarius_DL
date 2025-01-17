@@ -48,7 +48,7 @@ namespace Librarius_DL.ViewModels
             if (FindField == "Tytuł")
                 List = new ObservableCollection<TransactionForView>(List.Where(item => item.BookTitle != null && item.BookTitle.StartsWith(FindTextBox)));
             if (FindField == "Użytkownik")
-                List = new ObservableCollection<TransactionForView>(List.Where(item => item.BorrowerName != null && item.BorrowerName.Contains(FindTextBox)));
+                List = new ObservableCollection<TransactionForView>(List.Where(item => item.BorrowerName != null && item.BorrowerName.IndexOf(FindTextBox, StringComparison.OrdinalIgnoreCase)>=0));
         }
 
         public override List<string> GetComboboxFindList()
